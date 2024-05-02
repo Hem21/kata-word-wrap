@@ -4,10 +4,37 @@
 We need a method for wrapping text to a maximum number of columns like you get in a text editor window
 with word wrap turned on. 
 
-## When window is wider than the text 
-...then text is on one line.
+## When the window is narrower than a word
+...then the word is split at the window width.
 
-## When window is narrower than the text 
+e.g. if window width = 3 columns
+
+Input: `This is a test`
+Output:
+```
+Thi
+s<SPACE>
+is<SPACE>
+a<SPACE>
+tes
+t
+```
+
+e.g. if window width = 1 column
+
+Input: `test me`
+Output:
+```
+t
+e
+s
+t
+<SPACE>
+m
+e
+```
+
+## When window is wider than a word but narrower than the text 
 ... then text is wrapped (by inserting new line (`\n`) characters) before the word that would cause the 
 line to be too long.
 
@@ -32,18 +59,3 @@ first char of the new line is the beginning of a new word and not a space.
 
 Note: This is how notepad++ behaves (and probably others as well)
 
-## When the window is narrower than a word
-...then the word is split at the window width.
-
-e.g. if window width = 3 columns
-
-Input: `This is a test`
-Output:
-```
-Thi
-s<SPACE>
-is<SPACE>
-a<SPACE>
-tes
-t
-```

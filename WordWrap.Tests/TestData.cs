@@ -1,6 +1,6 @@
-﻿namespace WordWrap;
+﻿namespace WordWrap.Tests;
 
-public class TestData
+public static class TestData
 {
     public const string ShortText = "This is a short story.";
     
